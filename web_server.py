@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
-from vcscan import occurDict
+from vcscan import occurDict, pokespawns
 import pdb
 
 DEBUG = True
@@ -15,7 +15,7 @@ pages = FlatPages(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html', pages=pages, occurrences=occurDict)
+    return render_template('index.html', pages=pages, occurrences=occurDict, spawns=pokespawns)
 
 @app.route('/<path:path>/')
 def page(path):

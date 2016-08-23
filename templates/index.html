@@ -1,14 +1,10 @@
 {% block content %}
+    <p>Current Spawns</p>
+    {% for spawn in spawns %}
+    <br>{{spawn.name}} {{spawn.expiry_time}}</br>
+    {% endfor %}
+    <p>Spawn History</p>
     {% for pokemon in occurrences %}
     <br>{{pokemon[0]}} {{pokemon[1]}}</br>
     {% endfor %}
-    <ul>
-    {% for page in pages %}
-        <li>
-            <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
-        </li>
-    {% else %}
-        <li>No stuff.</li>
-    {% endfor %}
-    </ul>
 {% endblock content %}
