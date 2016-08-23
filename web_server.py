@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
+from vcscan import occurDict
+import pdb
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -8,10 +10,12 @@ FLATPAGES_EXTENSION = '.md'
 app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
+#pdb.set_trace()
+#print(occurrences)
 
 @app.route('/')
 def index():
-    return render_template('index.html', pages=pages)
+    return render_template('index.html', pages=pages, occurrences=occurDict)
 
 @app.route('/<path:path>/')
 def page(path):
