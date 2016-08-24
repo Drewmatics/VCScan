@@ -1,16 +1,32 @@
 <head>
-<link rel="stylesheet" type="text/css" href="vcscan.css">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/main.css')}}">
 <body>
 {% block content %}
     {% for current in currents %}
-    <b style="font-size:25px">There is a <span style="color:blue">{{current.name}}</span> at your desk! It will be there until {{current.expiry_time}}.</b><br>
+    <div class="poke-alert">
+        <img src={{current.spawn_img}} height="100" width="100"></img>
+        <b style="font-size:25px">There is a <span style="color:blue">{{current.name}}</span> at your desk! It will be there until {{current.expiry_time}}.</b>
+    </div>
+    {% else %}
+    <b style="font-size:25px">There are no pokemon at your desk currently. Sad. </b>
     {% endfor %}
     <br>
     <br>
     <p>Last 5 spawns</p>
-    {% for spawn in spawns %}
-    <br>{{spawn.name}} {{spawn.expiry_time}}</br>
-    {% endfor %}
+    <table>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Spawn Expiry Time</th>
+        </tr>
+        {% for spawn in spawns %}
+        <tr>
+            <td><img src={{spawn.icon}}></img></td>
+            <td>{{spawn.name}}</td>
+            <td>{{spawn.expiry_time}}
+        </tr>
+        {% endfor %}
+    </table>
     <p>Spawn History</p>
     {% for pokemon in occurrences %}
     <br>{{pokemon[0]}} {{pokemon[1]}}</br>

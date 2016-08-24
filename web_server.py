@@ -20,7 +20,6 @@ def index():
 	occurDict = get_occur_dict(conn)
 	pokespawns = get_pokes(conn)
 	currents = [x for x in pokespawns if x.expiry_time > datetime.now()]
-	#pdb.set_trace()
 	return render_template('index.html', pages=pages, occurrences=occurDict, spawns=pokespawns, currents=currents)
 
 @app.route('/<path:path>/')
