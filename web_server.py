@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
-from vcscan import occurDict, pokespawns
+from vcscan import get_pokes, get_occur_dict
+from datetime import datetime
 import pdb
+import sqlite3
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -9,13 +11,17 @@ FLATPAGES_EXTENSION = '.md'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+app.debug = True
 pages = FlatPages(app)
-#pdb.set_trace()
-#print(occurrences)
 
 @app.route('/')
 def index():
-    return render_template('index.html', pages=pages, occurrences=occurDict, spawns=pokespawns)
+	conn = sqlite3.connect("pogom_work.db")
+	occurDict = get_occur_dict(conn)
+	pokespawns = get_pokes(conn)
+	currents = [x for x in pokespawns if x.expiry_time > datetime.now()]
+	#pdb.set_trace()
+	return render_template('index.html', pages=pages, occurrences=occurDict, spawns=pokespawns, currents=currents)
 
 @app.route('/<path:path>/')
 def page(path):

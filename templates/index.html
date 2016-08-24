@@ -1,5 +1,13 @@
+<head>
+<link rel="stylesheet" type="text/css" href="vcscan.css">
+<body>
 {% block content %}
-    <p>Current Spawns</p>
+    {% for current in currents %}
+    <b style="font-size:25px">There is a <span style="color:blue">{{current.name}}</span> at your desk! It will be there until {{current.expiry_time}}.</b><br>
+    {% endfor %}
+    <br>
+    <br>
+    <p>Last 5 spawns</p>
     {% for spawn in spawns %}
     <br>{{spawn.name}} {{spawn.expiry_time}}</br>
     {% endfor %}
@@ -8,3 +16,5 @@
     <br>{{pokemon[0]}} {{pokemon[1]}}</br>
     {% endfor %}
 {% endblock content %}
+</body>
+</head>
