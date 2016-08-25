@@ -16,7 +16,7 @@ pages = FlatPages(app)
 
 @app.route('/')
 def index():
-	conn = sqlite3.connect("pogom_work.db")
+	conn = sqlite3.connect("pogom_vc.db")
 	occurDict = get_occur_dict(conn)
 	pokespawns = get_pokes(conn)
 	currents = [x for x in pokespawns if x.expiry_time > datetime.now()]

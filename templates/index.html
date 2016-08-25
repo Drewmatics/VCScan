@@ -10,9 +10,11 @@
     {% else %}
     <b style="font-size:25px">There are no pokemon at your desk currently. Sad. </b>
     {% endfor %}
-    <br>
-    <br>
-    <p>Last 5 spawns</p>
+    <div class="spawn-times">
+        <span>A pokemon will spawn at the Vision Critical office every :01:39, :21:06, and :52:18 on the hour. The spawn lasts for 15 minutes.</span>
+        <div>There may be other pokemon that spawn from the two pokestops that are close to us as well, if they are lured.</div>
+    </div>
+    <strong><div class="recent-spawns">Last 10 spawns</div></strong>
     <table>
         <tr>
             <th></th>
@@ -27,6 +29,9 @@
         </tr>
         {% endfor %}
     </table>
+    <div class="intro">How does this work? A scan is done periodically on the 3 spawn points that are close to the VC office.</div>
+    <img class="intro-map" src="static/assets/intro/map.png"></img>
+    <img class="intro-person" src="static/assets/intro/player.png"</img>
     <p>Spawn History</p>
     {% for pokemon in occurrences %}
     <br>{{pokemon[0]}} {{pokemon[1]}}</br>
