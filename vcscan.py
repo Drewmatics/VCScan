@@ -26,7 +26,7 @@ def get_pokes(conn):
 	occurDict = sorted(dict(occurrences).items(), key=lambda x: x[1], reverse=True)
 	pokespawns = []
 	i = 0
-	while (i < 2):
+	while (i < 10):
 		pokemon = result[i]
 		spawn_img = 'static/assets/dream-world/' + str(pokemon[0]) + '.svg'
 		icon = 'static/assets/icons/' + str(pokemon[0]).zfill(3) + '.png'

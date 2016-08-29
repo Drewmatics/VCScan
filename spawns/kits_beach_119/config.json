@@ -1,0 +1,13 @@
+{
+	"auth_service": "ptc",
+	"users":[
+		{"username": "forspawnscan3", "password": "forspawnscan3"},
+		{"username": "forspawnscan4", "password": "forspawnscan4"},
+		{"username": "forspawnscan5", "password": "forspawnscan5"}
+	],
+	"work":[
+		[49.279725, -123.160579, 49.271903, -123.138252]
+	],
+	"stepsPerPassPerWorker": 50,
+	"scanDelay": 10.2
+}
