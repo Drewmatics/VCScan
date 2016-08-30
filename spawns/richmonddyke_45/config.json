@@ -1,0 +1,14 @@
+{
+	"auth_service": "ptc",
+	"users":[
+		{"username": "spawnscan10", "password": "spawnscan10"},
+		{"username": "spawnscan11", "password": "spawnscan11"},
+		{"username": "spawnscan12", "password": "spawnscan12"},
+		{"username": "spawnscan13", "password": "spawnscan13"}
+	],
+	"work":[
+		[49.126486, -123.096507, 49.121178, -123.072217]
+	],
+	"stepsPerPassPerWorker": 50,
+	"scanDelay": 10.2
+}
