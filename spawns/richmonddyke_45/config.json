@@ -1,13 +1,13 @@
 {
 	"auth_service": "ptc",
 	"users":[
-		{"username": "spawnscan10", "password": "spawnscan10"},
-		{"username": "spawnscan11", "password": "spawnscan11"},
-		{"username": "spawnscan12", "password": "spawnscan12"},
-		{"username": "spawnscan13", "password": "spawnscan13"}
+		{"username": "propvetgen", "password": "cvanviz"},
+		{"username": "skiwpraspkest", "password": "cvanviz"},
+		{"username": "sluftmazraz", "password": "cvanviz"},
+		{"username": "tilvagcruct", "password": "cvanviz"}
 	],
 	"work":[
-		[49.126486, -123.096507, 49.121178, -123.072217]
+		[49.122334, -123.099350, 49.117643, -123.090874]
 	],
 	"stepsPerPassPerWorker": 50,
 	"scanDelay": 10.2
