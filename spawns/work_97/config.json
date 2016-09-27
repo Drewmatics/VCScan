@@ -1,0 +1,17 @@
+{
+	"auth_service": "ptc",
+	"users":[
+		{"username": "propvetgen", "password": "cvanviz"},
+		{"username": "skiwpraspkest", "password": "cvanviz"},
+		{"username": "sluftmazraz", "password": "cvanviz"},
+		{"username": "tilvagcruct", "password": "cvanviz"}
+	],
+	"work":[
+		[49.290926, -123.119456, 49.287707, -123.114134],
+		[49.290172, -123.114225, 49.286937, -123.110513],
+		[49.284012, -123.114225, 49.286937, -123.109800],
+		[49.287707, -123.119456, 49.285826, -123.114134]
+	],
+	"stepsPerPassPerWorker": 50,
+	"scanDelay": 10.2
+}
